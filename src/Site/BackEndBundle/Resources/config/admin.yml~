@@ -1,0 +1,42 @@
+# Site/BackEndBundle/Resources/config/admin.yml
+services:
+    sonata.admin.post:
+        class: Site\BackEndBundle\Admin\StaticPageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "StaticPage" }
+        arguments:
+            - ~
+            - Site\CoreBundle\Entity\StaticPage
+            - ~
+        calls:
+            - [ setTranslationDomain, [SiteBackEndBundle]]
+    sonata.admin.news:
+        class: Site\BackEndBundle\Admin\NewsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "News" }
+        arguments:
+            - ~
+            - Site\CoreBundle\Entity\News
+            - ~
+        calls:
+            - [ setTranslationDomain, [SiteBackEndBundle]]
+    sonata.admin.tags:
+        class: Site\BackEndBundle\Admin\TagsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Tags" }
+        arguments:
+            - ~
+            - Site\CoreBundle\Entity\Tags
+            - ~
+        calls:
+            - [ setTranslationDomain, [SiteBackEndBundle]]
+    sonata.admin.conn:
+        class: Site\BackEndBundle\Admin\NewsTagsConnAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Conn" }
+        arguments:
+            - ~
+            - Site\CoreBundle\Entity\NewsTagsConn
+            - ~
+        calls:
+            - [ setTranslationDomain, [SiteBackEndBundle]]

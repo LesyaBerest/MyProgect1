@@ -1,0 +1,26 @@
+Site\CoreBundle\Entity\Couple:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        manName:
+            type: string
+            length: 255
+            column: man_name
+        ladyName:
+            type: string
+            length: 255
+            column: lady_name
+    manyToOne:
+        category:
+            targetEntity: Category
+            inversedBy: couple
+            joinColumn:
+                name: category_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

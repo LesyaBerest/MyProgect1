@@ -1,0 +1,7 @@
+parameters:
+#    site_core.example.class: Site\CoreBundle\Example
+
+services:
+#    site_core.example:
+#        class: %site_core.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

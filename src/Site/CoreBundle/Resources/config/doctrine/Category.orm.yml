@@ -1,0 +1,24 @@
+Site\CoreBundle\Entity\Category:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        age:
+            type: string
+            length: 255
+        class:
+            type: string
+            length: 255
+    oneToMany:
+        couple:
+            targetEntity: Couple
+            mappedBy: category
+    lifecycleCallbacks: {  }

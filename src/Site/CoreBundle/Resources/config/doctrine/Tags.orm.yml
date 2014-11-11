@@ -1,0 +1,23 @@
+Site\CoreBundle\Entity\Tags:
+    type: entity
+    repositoryClass: Site\CoreBundle\Entity\Repository\TagsRepository
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        slug:
+            type: string
+            length: 255
+    manyToMany:
+        newsInf:
+            targetEntity: News
+            mappedBy: tagInf
+            inverseBy: tagInf
+    lifecycleCallbacks: {  }

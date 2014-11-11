@@ -1,0 +1,53 @@
+# Site/BackEndBundle/Resources/config/admin.yml
+services:
+    sonata.admin.post:
+        class: Site\BackEndBundle\Admin\StaticPageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "StaticPage" }
+        arguments:
+            - ~
+            - Site\CoreBundle\Entity\StaticPage
+            - ~
+        calls:
+            - [ setTranslationDomain, [SiteBackEndBundle]]
+    sonata.admin.news:
+        class: Site\BackEndBundle\Admin\NewsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "News" }
+        arguments:
+            - ~
+            - Site\CoreBundle\Entity\News
+            - ~
+        calls:
+            - [ setTranslationDomain, [SiteBackEndBundle]]
+    sonata.admin.tags:
+        class: Site\BackEndBundle\Admin\TagsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Tags" }
+        arguments:
+            - ~
+            - Site\CoreBundle\Entity\Tags
+            - ~
+        calls:
+            - [ setTranslationDomain, [SiteBackEndBundle]]
+    sonata.admin.couple:
+        class: Site\BackEndBundle\Admin\CoupleAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Couples" }
+        arguments:
+            - ~
+            - Site\CoreBundle\Entity\Couple
+            - ~
+        calls:
+            - [ setTranslationDomain, [SiteBackEndBundle]]
+    sonata.admin.category:
+        class: Site\BackEndBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Categories" }
+        arguments:
+            - ~
+            - Site\CoreBundle\Entity\Category
+            - ~
+        calls:
+            - [ setTranslationDomain, [SiteBackEndBundle]]
+    

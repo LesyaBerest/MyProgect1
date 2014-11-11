@@ -1,0 +1,21 @@
+{% extends "SiteFrontEndBundle::layout.html.twig" %}
+
+{% block title %}
+	{{ tag }}
+{% endblock %}
+
+
+{% block content %}
+	{% for new in news %}
+		<tr><td><a href={{path ('article_page',{'id':new.id})}}>{{new.id}}</a></td><td>{{new.date}}</td><td>{{new.title}}</td></tr><br/>
+	{% endfor %}
+{% endblock %}
+
+
+{#
+{% block content %}
+	{% for new in news.newsInf  %}
+		<tr><td><a href={{path ('article_page',{'id':new.id})}}>{{new.id}}</a></td><td>{{new.date}}</td><td>{{new.title}}</td></tr><br/>
+	{% endfor %}
+{% endblock %}
+#}

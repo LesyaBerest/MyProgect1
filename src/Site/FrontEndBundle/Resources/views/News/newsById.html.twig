@@ -1,0 +1,13 @@
+{% extends "SiteFrontEndBundle::layout.html.twig" %}
+
+{% block title %}
+	{{news.id}}
+{% endblock %}
+
+{% block content %}
+	<tr><td>{{news.date}}</td><td>{{news.title}}</td></tr>
+	<p>{{news.article}}</p>
+	{% for tag in news.tagInf %}
+		<a href={{path ('news_by_slug',{'slug':tag.slug})}}>{{tag}}</a>
+	{% endfor %}
+{% endblock %}

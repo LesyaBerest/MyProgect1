@@ -1,0 +1,7 @@
+parameters:
+#    site_back_end.example.class: Site\BackEndBundle\Example
+
+services:
+#    site_back_end.example:
+#        class: %site_back_end.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
